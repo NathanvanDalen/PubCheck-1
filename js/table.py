@@ -11,7 +11,7 @@ def createTable(query):
         MAX_COUNT = 100
         pubmedquery = query.replace('-','\-') 
         Entrez.email = 'A.N.Other@example.com'
-        h = Entrez.esearch(db='pubmed', term=query, retmax=MAX_COUNT)
+        h = Entrez.esearch(db='pubmed', term=pubmedquery, retmax=MAX_COUNT)
         result = Entrez.read(h)
         ids = result['IdList']
         h = Entrez.efetch(db='pubmed', id=ids, rettype='medline', retmode='text')
