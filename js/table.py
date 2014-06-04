@@ -9,7 +9,7 @@ def createTable(query):
                 return "<h3> No query </h3>"
         
         MAX_COUNT = 100
-         
+        pubmedquery = query.replace('-','\-') 
         Entrez.email = 'A.N.Other@example.com'
         h = Entrez.esearch(db='pubmed', term=query, retmax=MAX_COUNT)
         result = Entrez.read(h)
